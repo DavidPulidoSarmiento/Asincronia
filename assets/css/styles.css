@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header{
+    background-color: purple;
+}
+.dividir{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img{
+    height: 70px;
+    padding-top: 4px;
+}
+
+.nombre{
+    display: flex;
+    padding-top: 25px;
+    color: white;
+}
+
+.titulo{
+    grid-column: 1 / -1; /* Ocupa todas las columnas */
+    text-align: center;
+    color: purple;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+.ejercicios{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 columnas de igual tamaño */
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+.itemejercicios{
+    border: 90px solid white; /* Solo para visualización */
+    padding: 10px; /* Solo para visualización */
+}
+
+.letras{
+    color: purple;
+    font-weight: 700;
+    font-size: 20px;
+    border: 10px solid purple;
+}
