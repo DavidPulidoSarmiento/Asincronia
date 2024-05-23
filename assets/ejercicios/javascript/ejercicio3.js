@@ -1,24 +1,36 @@
-function map(array, callback) {
-  // Crear un nuevo array vacío para almacenar los resultados
-  const resultArray = [];
+let mapa = new Map();
 
-  // Recorrer cada elemento del array original
-  for (let i = 0; i < array.length; i++) {
-    // Ejecutar el callback con el elemento actual como argumento
-    const result = callback(array[i]);
-
-    // Almacenar el resultado en el nuevo array
-    resultArray.push(result);
+function mapita(mapa, callback) {
+  const nuevoarray = [];
+  for (let [key, value] of mapa) {
+    console.log(`Key: ${key} Value: ${value}`)
+    const result = callback(value)
+    nuevoarray.push(result);
   }
-
-  // Devolver el nuevo array con los resultados
-  return resultArray;
+  return nuevoarray;
 }
 
-// Ejemplo de uso:
-const numbers = [1, 2, 3, 4, 5];
-const doubled = map(numbers, function (num) {
-  return num * 2;
+mapa.set("n1", 1);
+mapa.set("n2", 2);
+mapa.set("n3", 3);
+mapa.set("n4", 4);
+
+const cuadrado = mapita(mapa, function (num) {
+  return num * num;
 });
 
-console.log(doubled); // [2, 4, 6, 8, 10]
+console.log(cuadrado);
+
+
+
+const arreglo = [8, 9, 2, 3, 6, 5]
+
+const consulat = x => x % 2 === 0
+
+const rest = arreglo.map(consulat)
+
+console.log(rest)
+
+const newArray = arreglo.filter(consulat);
+
+console.log(newArray)
